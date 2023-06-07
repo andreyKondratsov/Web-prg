@@ -1,25 +1,19 @@
 package mainTests;
 
+import base.WebTest;
 import driver.DriverManager;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class mainTests {
-
-
-    @BeforeMethod
-    public void setUp() {
-        DriverManager.getDriver();
-    }
+public class mainTests extends WebTest{
 
     @Test
     public void myTest() {
         DriverManager.open("https://www.google.com");
+        webPages.pageGoogle.clickAcceptCooke();
+        webPages.pageGoogle.getTextForCountry();
+        webPages.pageGoogle.setTextToSearchField();
+        webPages.pageGoogle.clickSearchButton();
+
     }
 
-    @AfterMethod
-    public void tearDown() {
-        DriverManager.quitDriver();
-    }
 }

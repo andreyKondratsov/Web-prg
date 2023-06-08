@@ -3,7 +3,6 @@ package WebPages.PageGoogle;
 import driver.Page;
 
 public class PageGoogle extends Page{
-
     public void clickAcceptCooke(){
         field("//*[@class='QS5gu sy4vM']").click();
     }

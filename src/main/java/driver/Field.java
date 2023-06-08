@@ -12,8 +12,8 @@ public class Field {
 
     String locator;
 
-    public Field(String locatorc){
-        this.locator = locatorc;
+    public Field(String locator){
+        this.locator = locator;
     }
 
     DriverManager driverManager = new DriverManager();

@@ -9,7 +9,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Field {
+
+    String locator;
+
+    public Field(String locatorc){
+        this.locator = locatorc;
+    }
+
     DriverManager driverManager = new DriverManager();
+
+    public String getLocator(){
+        return this.locator;
+    }
+
+    private WebElement getWebElement(){
+        return getWebElement(getLocator());
+    }
 
     private WebElement getWebElement(String locator) {
         WebElement element = null;
@@ -25,6 +40,10 @@ public class Field {
         return element;
     }
 
+    public void click(){
+        click(getLocator());
+    }
+
     public void click(String locator) {
         System.out.println("Click to " + locator);
         WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(5));
@@ -37,6 +56,10 @@ public class Field {
         }
     }
 
+    public void set(String text){
+        set(getLocator(), text);
+    }
+
     public void set(String locator, String text) {
         System.out.println("Set text to " + locator);
         WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(5));
@@ -46,6 +69,10 @@ public class Field {
         element.sendKeys(text);
         wait.until(ExpectedConditions.textToBePresentInElementValue(element, text));
 
+    }
+
+    public String get(){
+        return get(getLocator());
     }
 
     public String get(String locator) {

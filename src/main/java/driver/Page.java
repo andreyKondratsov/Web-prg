@@ -1,5 +1,9 @@
 package driver;
 
 public class Page {
-    public Field field = new Field();
+    private Field field;
+
+    public Field field(String locator){
+        return this.field = new Field(locator);
+    }
 }

@@ -1,4 +1,4 @@
-package driver;
+package core.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +30,7 @@ public class DriverManager {
     }
 
     public static void open(String url){
+        System.out.println("Go to " + url + "\n" );
         driver.get(url);
     }
 

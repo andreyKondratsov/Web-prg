@@ -1,6 +1,6 @@
 package WebPages.PageGoogle;
 
-import driver.Page;
+import core.driver.Page;
 
 public class PageGoogle extends Page{
     public void clickAcceptCooke(){
@@ -17,5 +17,9 @@ public class PageGoogle extends Page{
 
     public void clickSearchButton(){
         field("//*[@class='FPdoLc lJ9FBc']//*[@class='gNO89b']").click();
+    }
+
+    public void checkTextForCountry(){
+        log.check("Check text", getTextForCountry(),getTextForCountry(), "contains");
     }
 }

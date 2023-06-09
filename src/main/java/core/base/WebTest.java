@@ -1,6 +1,7 @@
-package base;
+package core.base;
 
-import driver.DriverManager;
+import core.driver.DriverManager;
+import core.Logger.Log;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -15,6 +16,8 @@ public class WebTest extends ContainerForPages{
     public void tearDown() {
         DriverManager.quitDriver();
     }
+
+    public Log log = new Log();
 
 
 }

@@ -1,4 +1,4 @@
-package driver;
+package core.driver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -45,7 +45,7 @@ public class Field {
     }
 
     public void click(String locator) {
-        System.out.println("Click to " + locator);
+        System.out.println("Click to " + locator + "\n");
         WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(5));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(getWebElement(locator)));
         element.click();
@@ -61,7 +61,7 @@ public class Field {
     }
 
     public void set(String locator, String text) {
-        System.out.println("Set text to " + locator);
+        System.out.println("Set text to " + locator + "\n");
         WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(5));
 
         WebElement element = getWebElement(locator);
@@ -76,10 +76,10 @@ public class Field {
     }
 
     public String get(String locator) {
-        System.out.println("Get text from " + locator);
+        System.out.println("Get text from " + locator + "\n");
         WebElement element = getWebElement(locator);
         String text = element.getText();
-        System.out.println(text);
+        System.out.println(text + "\n");
         return text;
     }
 }

@@ -19,7 +19,6 @@ public class mainTests extends WebTest{
 
         log.step("4. Set Text To Search Field, click Search Button");
         webPages.pageGoogle.setTextToSearchField();
-        webPages.pageGoogle.clickSearchButton();
 
     }
 

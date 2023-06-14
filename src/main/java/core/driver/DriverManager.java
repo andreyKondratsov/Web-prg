@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.concurrent.TimeUnit;
+
 public class DriverManager {
     private static WebDriver driver;
 
@@ -15,6 +17,10 @@ public class DriverManager {
             chromeOptions.addArguments("--disable-infobars");
             chromeOptions.addArguments("disable-gpu");
             driver = new ChromeDriver(chromeOptions);
+
+            driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().setScriptTimeout(5000, TimeUnit.MILLISECONDS);
         }
     }
 

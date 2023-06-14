@@ -1,6 +1,7 @@
 package core.driver;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -81,5 +82,15 @@ public class Field {
         String text = element.getText();
         System.out.println(text + "\n");
         return text;
+    }
+
+    public void sendKeys(Keys... keysToSend){
+        sendKeys(getLocator(), keysToSend);
+    }
+
+    public void sendKeys(String locator, Keys... keysToSend){
+        System.out.println("Send Keys " + keysToSend +" at "+ locator + "\n");
+        WebElement element = getWebElement(locator);
+        element.sendKeys(keysToSend);
     }
 }

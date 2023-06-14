@@ -1,6 +1,7 @@
 package WebPages.PageGoogle;
 
 import core.driver.Page;
+import org.openqa.selenium.Keys;
 
 public class PageGoogle extends Page{
     public void clickAcceptCooke(){
@@ -13,10 +14,7 @@ public class PageGoogle extends Page{
 
     public void setTextToSearchField(){
         field("//*[@class='gLFyf']").set("test");
-    }
-
-    public void clickSearchButton(){
-        field("//*[@class='FPdoLc lJ9FBc']//*[@class='gNO89b']").click();
+        field("//*[@class='gLFyf']").sendKeys(Keys.ENTER);
     }
 
     public void checkTextForCountry(){

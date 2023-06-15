@@ -24,9 +24,9 @@ public class Log {
 
     public boolean check(String description, String actualData, String expectedData, String compareType) {
         if (compareType.equalsIgnoreCase("contains"))
-            return checkContains(description, expectedData, actualData);
+            return checkContains(description,actualData, expectedData);
         else if (compareType.equalsIgnoreCase("matches"))
-            return checkMatches(description, expectedData, actualData);
+            return checkMatches(description, actualData, expectedData);
         else {
             System.out.println("Comparison type not available:" + compareType);
             return false;

@@ -4,7 +4,7 @@ import core.base.WebTest;
 import core.driver.DriverManager;
 import org.testng.annotations.Test;
 
-public class mainTests extends WebTest{
+public class mainTests extends WebTest {
 
     @Test(description = "myTest")
     public void myTest() {
